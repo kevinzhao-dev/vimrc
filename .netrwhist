@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/Users/kvzhao/.leetcode'
+let g:netrw_dirhist_1='/Users/kvzhao/Workspace/llm/llama.cpp/src'
+let g:netrw_dirhist_0='/Users/kvzhao/Workspace/llm/llama.cpp'
+let g:netrw_dirhist_9='/Users/kvzhao/build_ocean_thirdparty/third-party_cache/protozero/0c8bcdb3a9bdedf3e74b5808062db4f529a9d05a'
+let g:netrw_dirhist_8='/Users/kvzhao/Workspace/cpp-sandbox/practice/cmake/common'
+let g:netrw_dirhist_7='/Users/kvzhao/Workspace/cpp-sandbox/practice/cmake'
+let g:netrw_dirhist_6='/Users/kvzhao/Workspace/rust-sandbox/hello'
+let g:netrw_dirhist_5='/Users/kvzhao/Workspace/rust-sandbox/hello/tests'
+let g:netrw_dirhist_4='/Users/kvzhao/Workspace/rust-sandbox/hello/src'
+let g:netrw_dirhist_3='/Users/kvzhao/Workspace/rust-sandbox/hello'
