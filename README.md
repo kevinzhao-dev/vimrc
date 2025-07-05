@@ -77,6 +77,8 @@ If you prefer to set up manually:
 |--------|-------------|
 | `Ctrl+n` | Toggle NERDTree file explorer |
 | `Ctrl+w` + `h/j/k/l` | Navigate between windows |
+| `Ctrl+o` | Jump to previous location in jump list |
+| `Ctrl+i` | Jump to next location in jump list |
 
 ### Code Navigation (CoC LSP)
 
