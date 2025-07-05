@@ -14,7 +14,7 @@ A modern VS Code-like Vim configuration with powerful plugins for enhanced devel
 
 1. **Clone this repository to your home directory:**
    ```bash
-   git clone <your-git-repo-url> ~/.vim
+   git clone https://github.com/kevinzhao-dev/vimrc ~/.vim
    ```
 
 2. **Create symlink to vimrc:**
@@ -33,11 +33,22 @@ A modern VS Code-like Vim configuration with powerful plugins for enhanced devel
    vim +PlugInstall +qall
    ```
 
-5. **Install CoC language servers (optional):**
+5. **Install CoC language servers:**
    ```bash
    # Open vim and install language servers
    vim
-   :CocInstall coc-tsserver coc-python coc-json coc-html coc-css
+
+   # For C/C++
+   :CocInstall coc-clangd
+
+   # For Python
+   :CocInstall coc-pyright
+
+   # For Rust
+   :CocInstall coc-rust-analyzer
+
+   # For web development
+   :CocInstall coc-tsserver coc-json coc-html coc-css
    ```
 
 ### Manual Setup
@@ -192,12 +203,77 @@ To switch back to minimal config:
 mv ~/.vimrc.minimal ~/.vimrc
 ```
 
+## Language Server Setup
+
+### Prerequisites for Language Servers
+
+**C/C++ (clangd):**
+```bash
+# Install clangd
+# macOS
+brew install llvm
+
+# Ubuntu/Debian
+sudo apt install clangd
+
+# Then in vim
+:CocInstall coc-clangd
+```
+
+**Python (Pyright):**
+```bash
+# Install Python and pip, then in vim
+:CocInstall coc-pyright
+```
+
+**Rust (rust-analyzer):**
+```bash
+# Install Rust and cargo, then in vim
+:CocInstall coc-rust-analyzer
+```
+
+### Verifying Language Server Installation
+
+1. **Check installed extensions:**
+   ```vim
+   :CocList extensions
+   ```
+
+2. **Check language server status:**
+   ```vim
+   :CocInfo
+   ```
+
+3. **Check if language server is running for current file:**
+   ```vim
+   :CocCommand workspace.showOutput
+   ```
+
 ## Troubleshooting
 
 ### CoC Issues
 - Make sure Node.js is installed
 - Run `:CocInfo` to check CoC status
 - Install language servers with `:CocInstall coc-<language>`
+
+### Language Server Not Working
+- **Error "definition provider not found"**: Language server not installed for the file type
+- **Check file type**: `:set filetype?` to see if vim recognizes the file type
+- **Check language server**: `:CocList services` to see active language servers
+- **Restart CoC**: `:CocRestart` to restart the language server
+
+### C/C++ Specific Issues
+- **clangd not found**: Install clangd system-wide first
+- **No compile commands**: Create `compile_commands.json` or use cmake/bear to generate it
+- **Include paths**: Use `.clangd` config file in project root
+
+### Python Specific Issues
+- **Wrong Python version**: Configure python path in `:CocConfig`
+- **Missing modules**: Install packages in the same Python environment
+
+### Rust Specific Issues
+- **rust-analyzer not found**: Install rust-analyzer binary system-wide
+- **Project not recognized**: Make sure you're in a Cargo project directory
 
 ### NERDTree Issues
 - If NERDTree doesn't open, check if the plugin is installed with `:PlugStatus`
