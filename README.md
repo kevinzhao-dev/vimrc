@@ -12,53 +12,20 @@ A modern VS Code-like Vim configuration with powerful plugins for enhanced devel
 
 ### Quick Setup
 
-1. **Clone this repository to your home directory:**
-   ```bash
-   git clone https://github.com/kevinzhao-dev/vimrc ~/.vim
-   ```
+Clone this repository and set it up in one command:
 
-2. **Create symlink to vimrc:**
-   ```bash
-   ln -s ~/.vim/.vimrc ~/.vimrc
-   ```
+```bash
+git clone https://github.com/kevinzhao-dev/vimrc.git ~/.vim \
+  && ln -sf ~/.vim/.vimrc ~/.vimrc
+```
 
-3. **Install vim-plug (plugin manager):**
-   ```bash
-   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/autoload/plug.vim
-   ```
+Then, simply open Vim:
 
-4. **Install plugins:**
-   ```bash
-   vim +PlugInstall +qall
-   ```
+```bash
+vim
+```
 
-5. **Install CoC language servers:**
-   ```bash
-   # Open vim and install language servers
-   vim
-
-   # For C/C++
-   :CocInstall coc-clangd
-
-   # For Python
-   :CocInstall coc-pyright
-
-   # For Rust
-   :CocInstall coc-rust-analyzer
-
-   # For web development
-   :CocInstall coc-tsserver coc-json coc-html coc-css
-   ```
-
-### Manual Setup
-
-If you prefer to set up manually:
-
-1. Copy `.vimrc` to your home directory
-2. Create `~/.vim/plugged/` directory
-3. Install vim-plug as shown above
-4. Run `:PlugInstall` in vim
+On first launch, vim-plug and all plugins will be installed automatically.
 
 ## Plugins Included
 
@@ -100,76 +67,6 @@ If you prefer to set up manually:
 | `,hs` | Stage git hunk |
 | `,hu` | Undo git hunk |
 
-## Extended Hotkeys (Available in backup config)
-
-The backup configuration (`.vimrc.bak`) contains additional hotkeys with comma (`,`) as the leader key:
-
-### Leader Key Commands
-
-| Hotkey | Description |
-|--------|-------------|
-| `,w` | Quick save |
-| `,<Enter>` | Clear search highlighting |
-| `,l` / `,h` | Next/previous buffer |
-| `,tn` / `,tc` | New/close tab |
-
-### Window Management
-
-| Hotkey | Description |
-|--------|-------------|
-| `Ctrl+j/k/h/l` | Move between windows |
-| `,bd` | Close current buffer |
-| `,ba` | Close all buffers |
-
-### Text Editing
-
-| Hotkey | Description |
-|--------|-------------|
-| `0` | Jump to first non-blank character |
-| `*` | Search for word under cursor |
-| `Space` | Search forward |
-| `,pp` | Toggle paste mode |
-
-### Buffer Management
-
-| Hotkey | Description |
-|--------|-------------|
-| `,bd` | Close current buffer |
-| `,ba` | Close all buffers |
-| `,l` | Next buffer |
-| `,h` | Previous buffer |
-
-### Tab Management
-
-| Hotkey | Description |
-|--------|-------------|
-| `,tn` | New tab |
-| `,to` | Close other tabs |
-| `,tc` | Close current tab |
-| `,tm` | Move tab |
-| `,t,` | Next tab |
-| `,tl` | Toggle to last accessed tab |
-| `,te` | Open new tab with current file's directory |
-| `,cd` | Change directory to current file's directory |
-
-### Spell Checking
-
-| Hotkey | Description |
-|--------|-------------|
-| `,ss` | Toggle spell checking |
-| `,sn` | Next spelling error |
-| `,sp` | Previous spelling error |
-| `,sa` | Add word to dictionary |
-| `,s?` | Spelling suggestions |
-
-### Utility
-
-| Hotkey | Description |
-|--------|-------------|
-| `,m` | Remove Windows line endings (^M) |
-| `,q` | Quick buffer for notes |
-| `,x` | Quick markdown buffer for notes |
-| `,pp` | Toggle paste mode |
 
 ## Configuration Details
 
@@ -184,26 +81,6 @@ The backup configuration (`.vimrc.bak`) contains additional hotkeys with comma (
 - **No swap/backup files**: Clean working environment
 - **Auto-completion**: CoC.nvim provides VS Code-like intellisense
 
-## Switching Between Configurations
-
-To switch to the extended configuration with more hotkeys:
-
-```bash
-# Backup current config
-mv ~/.vimrc ~/.vimrc.minimal
-
-# Use the extended config
-cp ~/.vim/.vimrc.bak ~/.vimrc
-
-# Restart vim
-```
-
-To switch back to minimal config:
-
-```bash
-# Restore minimal config
-mv ~/.vimrc.minimal ~/.vimrc
-```
 
 ## Language Server Setup
 
