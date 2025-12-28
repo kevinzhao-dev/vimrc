@@ -1,4 +1,4 @@
-" Vim configuration for Kevin Zhao's Vim setup
+" Vim configuration for Kevin's Vim setup
 
 " Bootstrap vim-plug if not installed
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -16,12 +16,14 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
-Plug 'sheerun/vim-polyglot'
+Plug 'fatih/vim-go'
+Plug 'ziglang/zig.vim'
 
 call plug#end()
 
 " Basic settings
 syntax on
+filetype plugin indent on
 colorscheme gruvbox
 set number relativenumber
 
